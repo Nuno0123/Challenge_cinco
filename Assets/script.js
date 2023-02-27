@@ -1,15 +1,18 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // // in the html.
+
+// This where it's displaying date.
 var todaysDate = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(todaysDate);
 
 $(document).ready(function () {
      $(".saveBtn").on("click", function () {
         
-        var info = $(this).siblings(".description").val();
+        var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
-        localStorage.setItem(time, info);
+        // for saving text within the timeblocks on our website 
+        localStorage.setItem(time, text);
     })
    
     function timeTracker() {
@@ -18,7 +21,7 @@ $(document).ready(function () {
 
         $(".time-block").each(function () {
             var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
-
+            //This is where the time is checked and indicated whether the block is green for future event, red for present hour, and if not either than past
             if (timeBlock < timeNow) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
@@ -51,6 +54,8 @@ $(document).ready(function () {
     
         timeTracker();
 })
+
+//Used Jquery API for help with the time color background of the timeblock along with displaying the current date on top of the website
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
