@@ -27,6 +27,6 @@ For this week's challenge I have to create a calendar application that allows a 
  ## Website 
 
  ## Screenshot
-![screenshot](assets/img/_Users_nestormontanez_bootcamp_Challenge_cinco_index.html.png)
+![screenshot](Assets/Img/_Users_nestormontanez_bootcamp_Challenge_cinco_index.html.png)
  # Contact
  [Nestor Montañez on Github](https://github.com/Nuno0123)
